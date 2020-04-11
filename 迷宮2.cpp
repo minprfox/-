@@ -57,7 +57,6 @@ int main(){
 	que[tail].qy = 1;
 	tail++;
 	fomap[x][y] = 1;
-
 	do{
 		for( i=0; i<=3; i++){
 			x = que[head].qx+ next[i][0];
@@ -142,15 +141,12 @@ int main(){
     	}
     	x += next[dir][0];
 		y += next[dir][1];
-		
 		if( x < 1 || y < 1 || x > 21 || y > 21 || mapp[x][y] == '#'){
 			x = ex;
 			y = ey;
 			continue;	
 		}
 		fogj += next[dir][1] * 2;
-	
-		
 	}	
 	gotoxy( 0, 24);
 	cout<<"you win";
