@@ -96,6 +96,7 @@ int main(){
 			}
 			cout<<endl;
 		}
+	cout<<"  0 = you  ,  # = wall ,  Your task is to find E  ";
 	x=1, y=1, ex=1, ey=1;
 	while( mapp[x][y] != 'E'){
 		for( i=x-1; i<x+2; i++){
@@ -126,16 +127,16 @@ int main(){
                 move = getch();
                 switch(move){
                     case 72:    
-						dir = 3;
+			dir = 3;
                         break;
                     case 80:     
-						dir = 1;
+			dir = 1;
                         break;
                     case 77:    
-						dir = 0;
+			dir = 0;
                         break;
                     case 75:    
-						dir = 2;
+			dir = 2;
                         break;
                 }
     	}
@@ -148,7 +149,7 @@ int main(){
 		}
 		fogj += next[dir][1] * 2;
 	}	
-	gotoxy( 0, 24);
+	gotoxy( 0, 25);
 	cout<<"you win";
 	return 0;
 }
