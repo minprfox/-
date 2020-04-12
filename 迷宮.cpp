@@ -16,20 +16,20 @@ void gotoxy(int x, int y) {
 }
 int main(){
 	struct note que[1860];
-	char mapp[23][23];
-	int  i, j, x = 21, y = 21, z, check = 0, t, next[4][2] = { { 0 , 1}, { 1, 0}, { 0, -1}, { -1, 0}}, head, tail,h;
-	int fomap[23][23]={0} ,dir, move, gi, gj, fogj = 0;		
-	for( i=0; i<23; i+=22)
-		for( j=0; j<23; j++)
+	char mapp[40][40];
+	int  i, j, x = 38, y = 38, z, check = 0, t, next[4][2] = { { 0 , 1}, { 1, 0}, { 0, -1}, { -1, 0}}, head, tail,h;
+	int fomap[40][40]={0} ,dir, move, gi, gj, fogj = 0;		
+	for( i=0; i<40; i+=39)
+		for( j=0; j<40; j++)
 			mapp[i][j] = '#';
-	for( i=1; i<22; i++)
-		for( j=0; j<23; j+=22)
+	for( i=1; i<39; i++)
+		for( j=0; j<40; j+=39)
 			mapp[i][j] = '#';
-	for( i=1; i<22; i++)
-		for( j=1; j<22; j++)
+	for( i=1; i<39; i++)
+		for( j=1; j<39; j++)
 			mapp[i][j] = '.';
-	for( i=0; i<23; i++){
-		for( j=0; j<23; j++){
+	for( i=0; i<39; i++){
+		for( j=0; j<39; j++){
 			srand( time(0) + t);
        	    z = rand() % 7;
        	    if( z >= 4)
@@ -61,7 +61,7 @@ int main(){
 		for( i=0; i<=3; i++){
 			x = que[head].qx+ next[i][0];
 			y = que[head].qy+ next[i][1];
-			if( x < 1 || y < 1 || x > 21 || y > 21)
+			if( x < 1 || y < 1 || x > 38 || y > 38)
 				continue;
 			if( mapp [x][y] == 'E')
 				check=1;
@@ -85,11 +85,11 @@ int main(){
 		mapp[ex][ey] ='#';
 		mapp[x][y] = 'E';
 	}	
-	for( i=0; i<23; i++){
-			for( j=0; j<23; j++){
+	for( i=0; i<40; i++){
+			for( j=0; j<40; j++){
 				if( j == 0)
 					cout<<mapp[i][0];
-				else if( i < 1 || i > 21 || j > 21 )
+				else if( i < 1 || i > 38 || j > 38 )
 					cout<<" "<<mapp[i][j];
 				else
 					cout<<"  ";
@@ -142,14 +142,14 @@ int main(){
     	}
     	x += next[dir][0];
 		y += next[dir][1];
-		if( x < 1 || y < 1 || x > 21 || y > 21 || mapp[x][y] == '#'){
+		if( x < 1 || y < 1 || x > 38 || y > 38 || mapp[x][y] == '#'){
 			x = ex;
 			y = ey;
 			continue;	
 		}
 		fogj += next[dir][1] * 2;
 	}	
-	gotoxy( 0, 25);
+	gotoxy( 0, 42);
 	cout<<"you win";
 	return 0;
 }
