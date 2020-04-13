@@ -1,6 +1,6 @@
 /*
-解錯誤:
-修改E可以出現的地方
+	debug:
+	fix where E can appear;
 */
 #include <iostream>
 #include <windows.h>
