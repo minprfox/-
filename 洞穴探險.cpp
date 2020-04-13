@@ -1,3 +1,7 @@
+/*
+解錯誤:
+修改E可以出現的地方
+*/
 #include <iostream>
 #include <windows.h>
 #include <cmath>
@@ -61,8 +65,13 @@ int main(){
 		for( i=0; i<=3; i++){
 			x = que[head].qx+ next[i][0];
 			y = que[head].qy+ next[i][1];
-			if( x < 1 || y < 1 || x > 38 || y > 38)
+			if( x < 1 || y < 1 || x > 38 || y > 38){
+				x = ex;
+				y = ey;
 				continue;
+			}
+			ex = x;
+			ey = y;
 			if( mapp [x][y] == 'E')
 				check=1;
 			if( mapp[x][y] == '#'){
